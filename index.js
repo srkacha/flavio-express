@@ -1,11 +1,12 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
 const setRoutes = require('./routes').setRoutes
 
 const port = 3000
 
 // Application modules
-app.use(express.urlencoded())
+app.use(bodyParser.urlencoded({extended: true}))
 
 // Setting some simple routes
 const status = setRoutes(app)
